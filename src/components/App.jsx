@@ -4,6 +4,9 @@ import Dashboard from "./Dashboard/Dashboard";
 import Header from "./Header/Header";
 import Reviews from "./Reviews/Reviews";
 
+//paguinas not found
+import PageNotFound from "./PageNotFound/PageNotFound";
+
 //rutas padre e hijos
 import AboutMe from "./AboutMe/AboutMe"; //ruta padre
 import Contact from "./AboutMe/about-me-files/Contact";
@@ -38,6 +41,10 @@ function App() {
     <div className="App">
       <Header />
       <Routes>
+        {/* <Route path="/404" element={<PageNotFound />} /> pociblemente de esta manera se pueda para las demas rutas 
+         ruta PageNotFound con una ruta comodín.*/}
+        <Route path="*" element={<PageNotFound />} />
+        
         <Route path="/" element={<Dashboard />} />
         <Route path="/reviews" element={<Reviews reviews={reviews} />}/>
           <Route
